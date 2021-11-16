@@ -57,10 +57,17 @@ public class UserService {
 
 					String auth = userLogin.getUsername() + ":" + userLogin.getPassword();
 					byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+					String authHeader = "Basic " + new String(encodeAuth);
 					
+					
+					
+					userLogin.setToken(authHeader);
 					userLogin.setId(user.getId());
-					userLogin.setToken(encodeAuth.toString());
 					userLogin.setUsername(user.getUsername());
+
+					
+//					userLogin.setId(user.getId());
+//					userLogin.setUsername(user.getUsername());
 		
 					UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
 					userLogin.setDetails(userDetails);

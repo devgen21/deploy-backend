@@ -27,7 +27,7 @@ public class PostController {
 	 	@Autowired
 	    private PostRepository repository;
 
-	    //Busca todas postagens
+	    //Busca todas postagens 
 	    @GetMapping
 	    public ResponseEntity<List<Post>> GetAll(){
 	        return ResponseEntity.ok(repository.findAll());
