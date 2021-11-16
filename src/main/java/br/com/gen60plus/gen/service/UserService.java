@@ -60,18 +60,13 @@ public class UserService {
 					String authHeader = "Basic " + new String(encodeAuth);
 					
 					
-					
 					userLogin.setToken(authHeader);
 					userLogin.setId(user.getId());
 					userLogin.setUsername(user.getUsername());
-
 					
-//					userLogin.setId(user.getId());
-//					userLogin.setUsername(user.getUsername());
-		
 					UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
 					userLogin.setDetails(userDetails);
-					
+
 					return Optional.ofNullable(userLogin);
 				}
 				
