@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -39,17 +40,17 @@ public class Post {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
-	@Size(min = 5, max = 200, message = "Minimo 5 caracteres maximo 200")
 	@Column(name = "imagem")
 	private String image;
 
-	 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "theme_id")
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "theme_id")
+	@Transient
 	private Theme theme;
 	
-	@JoinColumn(name = "user_id")
-	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "user_id")
+//	@ManyToOne(fetch = FetchType.LAZY)
+	@Transient
 	private User user;
 
 	

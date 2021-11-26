@@ -32,18 +32,19 @@ public class Theme {
 	@Size(min = 2, max = 20, message = "Minimo 2 caracteres maximo 20")
 	@Column(name = "Título")
 	private String title;
+//	
+//	@NotNull(message = "Descricao nao pode estar vazio")
+//	@Size(min = 10, max = 40, message = "Minimo 10 caracteres maximo 40")
+//	@Column(name = "Descrição")
+//	private String description;
+//	
+//	@NotNull(message = "Hashtags nao pode estar vazio")
+//	@Size(min = 2, max = 40, message = "Minimo 2 caracteres maximo 10")
+//	@Column(name = "Hashtags")
+//	private String hashtags;
 	
-	@NotNull(message = "Descricao nao pode estar vazio")
-	@Size(min = 10, max = 40, message = "Minimo 10 caracteres maximo 40")
-	@Column(name = "Descrição")
-	private String description;
-	
-	@NotNull(message = "Hashtags nao pode estar vazio")
-	@Size(min = 2, max = 40, message = "Minimo 2 caracteres maximo 10")
-	@Column(name = "Hashtags")
-	private String hashtags;
-	
-	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
+//	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
+	@Transient
 	private List<Post> post;
 
 	public long getId() {
@@ -62,21 +63,21 @@ public class Theme {
 		this.title = title;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	public String getHashtags() {
-		return hashtags;
-	}
-
-	public void setHashtags(String hashtags) {
-		this.hashtags = hashtags;
-	}
+//	public String getDescription() {
+//		return description;
+//	}
+//
+//	public void setDescription(String description) {
+//		this.description = description;
+//	}
+//	
+//	public String getHashtags() {
+//		return hashtags;
+//	}
+//
+//	public void setHashtags(String hashtags) {
+//		this.hashtags = hashtags;
+//	}
 	
 	
 		
