@@ -43,14 +43,12 @@ public class Post {
 	@Column(name = "imagem")
 	private String image;
 
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "theme_id")
-	@Transient
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "theme_id")
 	private Theme theme;
 	
-//	@JoinColumn(name = "user_id")
-//	@ManyToOne(fetch = FetchType.LAZY)
-	@Transient
+	@JoinColumn(name = "user_id")
+	@ManyToOne(fetch = FetchType.LAZY)
 	private User user;
 
 	

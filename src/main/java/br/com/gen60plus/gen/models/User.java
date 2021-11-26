@@ -41,9 +41,8 @@ public class User {
 	
 
 	
-//	 @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-//	 @JsonIgnoreProperties("user")
-	 @Transient
+	 @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	 @JsonIgnoreProperties("user")
 	 private List<Post> post;
 	 
 

@@ -43,8 +43,7 @@ public class Theme {
 //	@Column(name = "Hashtags")
 //	private String hashtags;
 	
-//	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
-	@Transient
+	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
 	private List<Post> post;
 
 	public long getId() {
