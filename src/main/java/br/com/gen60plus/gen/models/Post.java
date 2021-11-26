@@ -17,6 +17,8 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="tb_post")
 public class Post {
@@ -45,10 +47,12 @@ public class Post {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "theme_id")
+	@JsonIgnoreProperties("post")
 	private Theme theme;
 	
 	@JoinColumn(name = "user_id")
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("post")
 	private User user;
 
 	

@@ -44,6 +44,7 @@ public class Theme {
 //	private String hashtags;
 	
 	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("theme")
 	private List<Post> post;
 
 	public long getId() {
