@@ -45,9 +45,10 @@ public class Post {
 	@Column(name = "imagem")
 	private String image;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "theme_id")
-	@JsonIgnoreProperties("post")
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "theme_id")
+//	@JsonIgnoreProperties("post")
+	@Transient
 	private Theme theme;
 	
 	@JoinColumn(name = "user_id")
