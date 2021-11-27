@@ -43,8 +43,9 @@ public class Theme {
 //	@Column(name = "Hashtags")
 //	private String hashtags;
 	
-	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
-	@JsonIgnoreProperties("theme")
+//	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
+//	@JsonIgnoreProperties("theme")
+	@Transient
 	private List<Post> post;
 
 	public long getId() {
