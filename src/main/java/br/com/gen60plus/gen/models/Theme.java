@@ -43,9 +43,8 @@ public class Theme {
 //	@Column(name = "Hashtags")
 //	private String hashtags;
 	
-//	@OneToMany(mappedBy = "theme", fetch = FetchType.LAZY)
-//	@JsonIgnoreProperties("theme")
-	@Transient
+	@OneToMany(mappedBy = "theme", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("theme")
 	private List<Post> post;
 
 	public long getId() {
