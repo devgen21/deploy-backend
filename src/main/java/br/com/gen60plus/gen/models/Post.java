@@ -45,13 +45,13 @@ public class Post {
 	@Column(name = "imagem")
 	private String image;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "theme_id")
 	@JsonIgnoreProperties("post")
 	private Theme theme;
 	
 	@JoinColumn(name = "user_id")
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JsonIgnoreProperties("post")
 	private User user;
 
